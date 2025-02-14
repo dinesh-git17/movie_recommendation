@@ -5,6 +5,7 @@ Overview:
 ---------
 This project is an advanced movie recommendation system built using the MovieLens 100K dataset.
 It demonstrates various machine learning techniques including:
+```
   • Data preprocessing and merging of the original MovieLens files (e.g., u.data, u.item).
   • Traditional recommendation using Pearson correlation on a user-rating pivot table.
   • Advanced recommendation using matrix factorization (Non-negative Matrix Factorization, NMF)
@@ -14,6 +15,7 @@ It demonstrates various machine learning techniques including:
     the model over time.
   • An interactive Streamlit dashboard for real-time recommendations and feedback.
   • Enhanced logging with colorful, emoji-enhanced messages.
+```
 
 Project Features:
 -----------------
