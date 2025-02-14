@@ -43,6 +43,43 @@ def get_pivot_traditional_global():
 def run_streamlit_app():
     import streamlit as st
 
+    # Inject custom CSS for improved styling and layout.
+    st.markdown(
+        """
+        <style>
+        /* Overall page styling */
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .main .block-container {
+            padding: 2rem;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        /* Button styling */
+        .stButton>button {
+            background-color: #3498db;
+            color: white;
+            border-radius: 10px;
+            padding: 0.5rem 1rem;
+            border: none;
+            font-weight: bold;
+        }
+        .stButton>button:hover {
+            background-color: #2980b9;
+        }
+        /* Slider label styling */
+        .css-1aumxhk {
+            font-size: 1rem;
+            color: #34495e;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
     st.title("Enhanced Movie Recommendation Dashboard")
     st.write(
         "Explore movie recommendations, feedback analytics, and A/B testing of recommendation strategies."
@@ -52,6 +89,9 @@ def run_streamlit_app():
     cwd = os.getcwd()
     st.write("Current working directory:", cwd)
     logger.info("Current working directory: %s", cwd)
+
+    # Option to toggle debug output (if needed)
+    debug_mode = st.checkbox("Enable Debug Output", value=False)
 
     @st.cache_resource
     def get_pivot_advanced_streamlit():
